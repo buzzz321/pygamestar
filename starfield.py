@@ -16,8 +16,6 @@ class Pixel:
         self.y = y
         self.xa = xa
         self.ya = ya
-        self.ox = x
-        self.oy = y
 
     def move(self, width, height):
         self.x += self.xa
@@ -54,7 +52,7 @@ class Pixel:
 
 def setup():
     data = []
-    for n in range(0, 1000):
+    for n in range(0, 100):
         pixel = Pixel(random.randint(0, width - 1),
                       random.randint(0, height - 1), 0, 0)
         pixel.star_direction(height, width)
@@ -73,7 +71,7 @@ black = (0, 0, 0)
 while running:
     screen.fill(black)
     for pixel in starfield:
-        pixel.move(height, width)
+        pixel.move(width, height)
 
         x = pixel.x
         y = pixel.y
